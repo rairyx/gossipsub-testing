@@ -9,5 +9,8 @@ WORKDIR /
 RUN git clone https://github.com/rairyx/go-libp2p-pubsub-benchmark-tools.git
 WORKDIR go-libp2p-pubsub-benchmark-tools
 RUN go get ./...
+RUN cd /go-libp2p-pubsub-benchmark-tools/cmd/host && go build
+RUN cd /go-libp2p-pubsub-benchmark-tools/cmd/client && go build
+RUN cd /go-libp2p-pubsub-benchmark-tools/cmd/orchestra && go build
 
 ENTRYPOINT ["/bin/sh"]
